@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<title>Formulario</title>
+</head>
+<body>
+
+	<form name="formulario1" action="#" class="formulario">
+		<div class="container">
+			<div class="container_d">
+				<table>
+					<tr>
+						<td><label>Nombre:</label></td>
+						<td class="dos"><input type="text" name="nombre" id="nombres_txt"></td>
+					</tr>
+					<tr>
+						<td><label>Apellido Paterno:</label></td>
+						<td class="dos"><input type="text" name="apellido_p" id="ap_p_txt"></td>
+					</tr>
+					<tr>
+						<td><label>Apellido Materno:</label></td>
+						<td class="dos"><input type="text" name="apellido_m" id="ap_m_txt"></td>
+					</tr>
+					<tr>
+						<td><label>Dirección:</label></td>
+						<td class="dos"><input type="text" name="direccion" id="direccion_txt"></td>
+					</tr>
+					<tr>
+						<td><label>Región</label></td>
+						<td class="dos">
+							<select id="region_sl" name="region" onchange="cargar_comunas_regiones(), cargar_provincia()">
+												
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Provincia</label></td>
+						<td class="dos">
+							<select name="provincia" id="provincia_sl" disabled="true" class="provincia">
+								
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Comuna</label></td>
+						<td class="dos">
+							<select id="comuna_sl" name="comuna" onchange = "cargar_provincia()">
+								
+							</select>
+						</td>
+					</tr>
+				</table>
+				<input type="button" name="bt_agregar" class="agregar" id="bt_agregar" value="Agregar" onclick="agregar()">
+			</div>
+		</div>
+
+		<div class="container_2">
+				<table id="tabla_d" class="tabla_d">
+					<tr class="descrip">
+						<td>Nombres</td>
+						<td>Apellido Paterno</td>
+						<td>Apellido Materno</td>
+						<td>Dirección</td>
+						<td>Comuna</td>
+					</tr>
+					<tr>
+						<td><label id="lb_nombre">Jesús Enrique</label></td>
+						<td><label id="lb_ape_p">Leobruni</label></td>
+						<td><label id="lb_ape_m">Garcia</label></td>
+						<td><label id="lb_dir">Jorge Gonzáles Bastias</label></td>
+						<td><label id="lb_comuna">Macul</label></td>
+					</tr>
+				</table>
+			</div>
+	</form>
+
+<script type="text/javascript" src="script.js"></script>
+<footer class="footer">Elaborado por Jesús Leobruni.</footer>
+</body>
+</html>
