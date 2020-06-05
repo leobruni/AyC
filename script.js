@@ -76,6 +76,13 @@ function agregar() { //Funcion encargada de agregar datos a la tabla de usuarios
     var region = document.getElementById('region_sl').value;
     var comuna = document.getElementById('comuna_sl').value;
     var provincia = document.getElementById('provincia_sl').value;
+    
+    //Con las siguientes lineas eliminamos los caracteres especiales que se ingresen en los campos de texto.
+    nombres = nombres.replace(/[^a-zA-Z ]/g, "");
+    apellido_p = apellido_p.replace(/[^a-zA-Z ]/g, "");
+    apellido_m = apellido_m.replace(/[^a-zA-Z ]/g, "");
+    direccion = direccion.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+    
     var persona = {nombre:nombres, apep:apellido_p, apem:apellido_m, dir:direccion, reg:region, com:comuna, pro:provincia};
 
     if (nombres == '' || apellido_p == '' || apellido_m == '' || direccion == '') { // Establecemos el condicional para que no puedan estar los cuadros de texto vacios
